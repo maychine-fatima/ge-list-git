@@ -26,7 +26,7 @@ export class ListServiceService {
     let daysInterval = Math.floor(Math.abs(new Date("2017-11-22T00:00:00Z").getTime() - new Date(repo.created_at).getTime()) / (1000 * 60 * 60 * 24))
 
     return {
-      avatarOwner: repo.owner.avatar_url,
+      avatarOwnerUrl: repo.owner.avatar_url,
       repoName: repo.name,
       repoDescription: repo.description,
       nbStars: repo.stargazers_count,
