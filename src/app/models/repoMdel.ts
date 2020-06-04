@@ -2,7 +2,7 @@
 
 export interface repoModel {
 
-    avatarOwner: string;
+    avatarOwnerUrl: string;
     repoName: string;
     repoDescription: string;
     nbStars: Number;

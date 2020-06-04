@@ -1,0 +1,21 @@
+<div id="list-component">
+    <div *ngFor="let repo of reposOfTheMonth">
+        <img [src]="repo?.avatarOwnerUrl">
+        <h4 class="repo_name" *ngIf="repo?.repoName">{{repo?.repoName}}</h4>
+        <p class="repo_description" *ngIf="repo?.repoDescription"> {{repo?.repoDescription}} </p>
+        <p class="taux">
+            <ng-container *ngIf="repo?.nbStars">
+                <label class="repo_stars">{{repo?.nbStars}}</label>
+                <span> Stars</span>
+            </ng-container>
+            <ng-container *ngIf="repo?.nbIssues">
+                <label class="issues">{{repo?.nbIssues}}</label>
+                <span>Issues</span>
+            </ng-container>
+            <label class="info" *ngIf="repo?.intervalTime && repo?.name_owner">submitted
+                <span class="interval_time">{{repo?.intervalTime}} days</span> ago by
+                <span class="owner">{{repo?.ownerName}}</span>
+            </label>
+        </p>
+    </div>
+</div>
