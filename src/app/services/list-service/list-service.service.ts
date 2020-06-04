@@ -14,8 +14,8 @@ export class ListServiceService {
 
   configUrl = environment.githubApi;
 
-  getGithubDataList() {
-    return this.http.get(this.configUrl).pipe(
+  getGithubDataList(page) {
+    return this.http.get(this.configUrl + '&page=' + page).pipe(
       map((res: githubModel) =>
         res.items.map(repo => this.mapGithubDataList(repo))
           .filter((repo: repoModel) => repo.intervalTime <= 30))
